@@ -12,41 +12,40 @@ var getWeatherFromYahoo = function(city, state){
 	    if (xhr.readyState == 4 && xhr.status == 200) {
 
             //parse the response into JSON
-	        var arr = JSON.parse(xhr.responseText);
-	        
+            var arr = JSON.parse(xhr.responseText);
+
             //save my hands
             var results = arr.query.results;
 
             //define the element we're going to modify
-	        var el = document.getElementById("result");
+            var el = document.getElementById("result");
 
             //null check
-	        if(results!==null) {
-
+            if(results!==null) {
                 //grab the info
-	        	var targetForecast = results.channel.item.forecast[0];
-    	        var tempHigh = targetForecast.high;
-    	        var tempLow = targetForecast.low;
-    	        var date = targetForecast.date;
-    	        var day = targetForecast.day;
-    	        var conditions = targetForecast.text;
-    	        
+                var targetForecast = results.channel.item.forecast[0];
+                var tempHigh = targetForecast.high;
+                var tempLow = targetForecast.low;
+                var date = targetForecast.date;
+                var day = targetForecast.day;
+                var conditions = targetForecast.text;
+
                 //output string
-    	        var string = "The forecast of " + city + ", " + state; 
-    	        string+= " for " + day + ", " + date + ", is ";
-    	        string+= conditions + "\nwith ";
-    	        string+= "a high of " + tempHigh + " degrees and lows of " + tempLow + " degrees";
-    	        
+                var string = "The forecast of " + city + ", " + state; 
+                string+= " for " + day + ", " + date + ", is ";
+                string+= conditions + "\nwith ";
+                string+= "a high of " + tempHigh + " degrees and lows of " + tempLow + " degrees";
+
                 //update the element
-    	        el.value = string;
-    	    }
-    	    else {
+                el.value = string;
+            }
+            else {
                 //tell the user we couldn't find info on the place
-    	    	el.value = "Could not find "+city+", "+state+".\nIs that in the USA?";
-    	    }
+                el.value = "Could not find "+city+", "+state+".\nIs that in the USA?";
+            }
 
             //make call to the TTS-API used in getMp3.js and getMp3.html
-    	    setMp3AndPlay(el.value.replace(" "+"+"));
+            setMp3AndPlay(el.value.replace(" "+"+"));
 	    }
 	};
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>An Example</title>
+		
+		<meta charset="utf-8"/>
+		
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+		<script type="text/javascript" src="getMp3.js"></script>
+		<script type="text/javascript" src="yahooWeather.js"></script>
+	</head>
+	<body class="container text-center">
+		<!--title stuff-->
+		<h1>How To Use An API Example 2</h1>
+		<h2>Getting Checking the Weather</h2>
+
+		<!--sound stuff-->
+		<audio id="sources" autoplay>
+			<source id="audioSrc" src="" type="audio/mp3"/>
+		</audio>
+		
+		<!--user input stuff-->
+		<form class="container form-inline" style="margin-top:2em;">
+			<div class="form-group">
+				<label for="cityField">City:</label>
+				<input type="text" class="form-control" id="cityField" placeholder="Enter a city"/>
+			</div>
+			<div class="form-group">
+				<label for="stateField">State:</label>
+				<input type="text" class="form-control" id="stateField" placeholder="Enter a state"/>
+			</div>
+		</form>
+		<div style="width:100%; height: 2em;"></div>
+		<button class="btn btn-primary" onclick="onClick()">getWeather()</button>
+
+		<!--output stuff-->
+		<div class="row" style="width:75%; margin: 0 auto; margin-top: 2em;">
+				<textarea id="result" rows="15" type="text" class="form-control" disabled="disabled"></textarea>
+		</div>
+
+		<hr/>
+		<!--footer, credit Yahoo-->
+		<footer class="row">
+			<span>Powered by <a href="https://developer.yahoo.com/weather/" target="_blank">Yahoo</a></span>
+		</footer>
+	</body>
+</html>

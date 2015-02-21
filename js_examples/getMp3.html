@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>An Example</title>
+		<meta charset="utf-8"/>
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src="getMp3.js"></script>
+	</head>
+	<body class="container text-center">
+		<!--title stuff-->
+		<h1>How To Use An API Example 1</h1>
+		<h2>Text-to-Speech</h2>
+
+		<!--audio stuff-->
+		<audio id="sources" autoplay>
+			<source id="audioSrc" src="http://tts-api.com/tts.mp3?q=please+enter+a+phrase" type="audio/mp3"/>
+		</audio>
+		
+		<!--user input stuff-->
+		<textarea placeholder="" class="form-control" rows="15" cols="50" id="input"></textarea><br/>
+		<button onclick="onClick()" style="margin-bottom:1em;" class="btn btn-md btn-primary">Play Text</button><br/>
+
+		<hr/>
+		<!--footer, credit TTY-API-->
+		<footer>
+			<span>Powered by <a href="TTS-API.COM" target="_blank">TTS-API.COM</a></span>
+		</footer>
+	</body>
+</html>
